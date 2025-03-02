@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    /* CSS Reset */
+    <title>Phoenix Institute</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1170px)" href="css/phone.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        /* CSS Variables */
+        :root{
+            --navbar-height: 59px;
+        }
+
+        /* Navigation Bar */
+        #navbar{
+            display: flex;
+            justify-content: center; /* Align content to center */
+            align-items: center;
+            position: sticky;
+            top: 0px;
+        }
+
+        #navbar::before{
+            content: "";
+            background-color: black;
+            position: absolute;
+            top:0px;
+            left:0px;
+            height: 100%;
+            width:100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        /* Navigation Bar: Logo and Image */
+        #logo{
+            margin: 10px 34px;
+        }
+
+        #logo img{
+            height: 59px;
+            margin: 3px 6px;
+        }
+
+        /* Navigation Bar: List Styling */
+        #navbar ul{
+            display: flex;
+            font-family: 'Baloo Bhai', cursive;
+        }
+
+        #navbar ul li{ 
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        #navbar ul li a{
+            color: white;
+            display: block;
+            padding: 3px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        #navbar ul li a:hover{
+            color: black;
+            background-color: white;
+        }
+
+        /* Home Section */
+        #home{
+            display: flex;
+            flex-direction: column;
+            padding:3px 200px;
+            height: 550px;
+            justify-content: center;
+            align-items: center;
+            background: url('images/bg.jpg') no-repeat center center/cover; /* Add background image */
+        }
+
+        #home h1{
+            color: white;
+            text-align: center;
+            font-family: 'Baloo Bhai', cursive;
+        }
+
+        #home p{
+            color:white;
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: 'Bree Serif', serif;
+        }
+
+        /* Courses Section */
+        #courses{
+            margin: 34px;
+            display: flex;
+            flex-direction: column; /* Change direction to column */
+            align-items: center; /* Center align content */
+        }
+
+        #courses .box{ 
+            border: 2px solid brown;
+            padding: 34px;
+            margin: 2px 55px;
+            border-radius: 28px;
+            background: #f2f2f2;
+            margin-bottom: 20px;
+            /* flex: 1; Allow boxes to take equal space */
+        }
+
+        #courses .box img{ 
+            height: 160px;
+            margin: auto;
+            display: block;
+        }
+
+        #courses .box p{
+            font-family: 'Bree Serif', serif;
+            margin-bottom: 15px; /* Add space below the paragraph */
+        } 
+
+        /* Gallery Section */
+        #gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 900px; /* Adjust as needed */
+    margin: auto;
+}
+
+.gallery-item {
+    width: 30%; /* Each image takes up roughly 30% of the container */
+    max-width: 300px; /* Adjust to your needs */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+        /* Contact Section */
+        #contact{
+            position: relative;
+            padding: 20px;
+            text-align: center; /* Center align content */
+        }
+
+        #contact::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.7;
+            background: url('img/contact.jpg') no-repeat center center/cover;
+        }
+
+        .contact-info{
+            color: gray;
+            /* font-family: 'Bree Serif', serif; */
+        }
+
+        .contact-info a{
+            color: gray;
+            text-decoration: none;
+            /* margin::after 10px; */
+
+        }
+
+        .contact-info a:hover{
+            color: grey;
+        }
+
+        footer{
+            background: black;
+            color: white;
+            padding: 9px 20px;
+        }
+
+        /* Utility Classes */
+        .h-primary{
+            font-family: 'Bree Serif', serif;
+            font-size: 3.8rem;
+            padding: 12px;
+        }
+
+        .h-secondary{
+            font-family: 'Bree Serif', serif;
+            font-size: 2.3rem;
+            padding: 12px;
+        }
+
+        .btn{
+            padding: 6px 20px;
+            border: 2px solid white;
+            background-color: brown;
+            color: white;
+            margin: 17px;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            cursor:pointer;
+        }
+
+        .center{
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="images/logo.png" alt="PhoenixInstitute.com">
+        </div>
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#courses">Courses</a></li>
+            <li class="item"><a href="#gallery">Gallery</a></li>
+            <li class="item"><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary">Welcome to Phoenix Institute</h1>
+        <p>Empowering Minds, Shaping Futures</p>
+        <p>Join us and discover a world of knowledge!</p>
+        <a href="admission.html" class="btn">Enroll Now</a>
+    </section>
+
+    <section id="courses">
+        <h1 class="h-primary center">Our Courses</h1>
+        <div id="services" class="center">
+            <div class="box">
+                <img src="images/sci.jpg" alt="">
+                <h2 class="h-secondary center">Science & Technology</h2>
+                <p class="center">Explore the wonders of science and technology with our expert-led courses. Gain hands-on experience and advance your career!</p>
+                <a href="admission.html" class="btn">Enroll Now</a>
+            </div>
+            <div class="box">
+                <img src="images/art.jpg" alt="">
+                <h2 class="h-secondary center">Arts & Humanities</h2>
+                <p class="center">Dive into the rich world of arts and humanities. Our courses are designed to broaden your perspective and enhance your creativity!</p>
+                <a href="admission.html" class="btn">Enroll Now</a>
+            </div>
+            <div class="box">
+                <img src="images/mag.jpg" alt="">
+                <h2 class="h-secondary center">Business & Management</h2>
+                <p class="center">Learn the essentials of business and management. Whether you're aiming for leadership roles or entrepreneurial success, we've got you covered!</p>
+                <a href="admission.html" class="btn">Enroll Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h1 class="h-primary center">Gallery</h1>
+        <div id="gallery" class="center">
+            <div class="gallery-item">
+                <img src="images/g1.jpg" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="images/g2.jpg" alt="Gallery Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/g3.jpg" alt="Gallery Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="images/g4.jpg" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="images/g5.jpg" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="images/g6.jpg" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="images/g7.jpg" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="images/g8.jpg" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="images/g9.jpg" alt="Gallery Image 4">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1 class="h-primary center">Contact Us</h1>
+        <div class="contact-info">
+            <p>Contact Number: +1 (555) 123-4567</p>
+            <p>Email: info@phoenixinstitute.com</p>
+            <p>Address: 123 Phoenix Lane, Knowledge City, IN</p>
+            <div>
+                <a href="https://www.facebook.com/PhoenixInstitute" target="_blank">Facebook</a>
+                <a href="https://twitter.com/PhoenixInstitute" target="_blank">Twitter</a>
+                <a href="https://www.linkedin.com/company/phoenix-institute" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="center">
+            Copyright &copy; 2025 www.PhoenixInstitute.com. All rights reserved!
+        </div>
+    </footer>
+</body>
+</html>
